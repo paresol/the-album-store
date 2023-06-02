@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "DBHeavent";
+  src: url("/fonts/DBHeavent/dbheavent-regular-webfont.woff2") format("woff2"),
+    url("/fonts/DBHeavent/dbheavent-regular-webfont.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "DBHeavent";
+  src: url("/fonts/DBHeavent/dbheavent-med-webfont.woff2") format("woff2"),
+    url("/fonts/DBHeavent/dbheavent-med-webfont.woff") format("woff");
+  font-weight: 500;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "DBHeavent";
+  src: url("/fonts/DBHeavent/dbheavent-bold-webfont.woff2") format("woff2"),
+    url("/fonts/DBHeavent/dbheavent-bold-webfont.woff") format("woff");
+  font-weight: 700;
+  font-display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  font-family: DBHeavent;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  color: #595A5C;
+}
+
+textarea {
+  resize: none;
+}
+
+/* ----------- hide arrow when type number ----------- */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* ---------------------- scroll ---------------------- */
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #c5c5c5;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #f37024;
+}

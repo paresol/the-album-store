@@ -1,0 +1,57 @@
+// ===== VARIABLE =====
+$color-primary: #FF66B2;
+$color-secondary: #FF99CC;
+
+$white-color: #ffffff;
+$white2-color: #fafbfe;
+$white3-color: #f1f1f1;
+$white4-color: #eef2f7;
+$black-color: #000000;
+$black2-color: #000000b3;
+$black3-color: #101010;
+$lightGrey-color: #c1bdba;
+$midGray-color: #3a3937;
+$darkGrey-color: #595a5c;
+$red-color: #ff0000;
+
+// ===== COLOR CLASS =====
+.color-primary {
+  color: $color-primary;
+}
+.color-secondary {
+  color: $color-secondary;
+}
+
+.color-white {
+  color: $white-color;
+}
+.color-white2 {
+  color: $white2-color;
+}
+.color-white3 {
+  color: $white3-color;
+}
+.color-white4 {
+  color: $white4-color;
+}
+.color-black {
+  color: $black-color;
+}
+.color-black2 {
+  color: $black2-color;
+}
+.color-black3 {
+  color: $black3-color;
+}
+.color-lightGrey {
+  color: $lightGrey-color;
+}
+.color-midGray {
+  color: $midGray-color;
+}
+.color-darkGrey {
+  color: $darkGrey-color;
+}
+.color-red {
+  color: $red-color;
+}

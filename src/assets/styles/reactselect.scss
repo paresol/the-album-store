@@ -1,0 +1,68 @@
+.react-select {
+  [class*="-control"] {
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 8px;
+    padding: 6px 16px 7px;
+    border: 1px solid $lightGrey-color;
+
+    &:focus,
+    &:hover,
+    &:focus-within {
+      border: 1px solid $color-primary;
+    }
+  }
+
+  [class*="-IndicatorsContainer"],
+  [class*="-Input"] {
+    margin: 0;
+    padding: 0;
+  }
+
+  [class*="-indicatorContaine"],
+  [class*="-ValueContainer"] {
+    padding: 0;
+  }
+
+  [class*="-indicatorSeparator"] {
+    display: none;
+  }
+
+  [class*="-Svg"] {
+    fill: $color-primary;
+  }
+
+  [class*="-menu"] {
+    padding: 0;
+    margin: 1px 0 0;
+    border-radius: 8px;
+    background-color: $white-color;
+  }
+
+  [class*="-MenuList"] {
+    padding: 0;
+    border-radius: 4px;
+  }
+
+  [class*="-NoOption"],
+  [class*="-option"] {
+    margin: 0;
+    font-size: 1rem;
+    color: #000000;
+    padding: 8px 16px;
+    background-color: transparent;
+
+    &:hover {
+      color: $white-color;
+      background-color: $color-primary;
+
+      &:first-child {
+        border-radius: 8px 8px 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 8px 8px;
+      }
+    }
+  }
+}

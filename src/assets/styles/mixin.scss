@@ -1,0 +1,235 @@
+// TRANSITION (USAGE: @include transition(color .3s ease);)
+@mixin transition($property) {
+  -webkit-transition: $property;
+  -moz-transition: $property;
+  -o-transition: $property;
+  -ms-transition: $property;
+  transition: $property;
+}
+
+// TRANSFORM (USAGE: @include transform(rotate(20deg));)
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -o-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+// TRANSFORM (USAGE: @include boxShadow(0px 2px 2px #cccccc);)
+@mixin boxShadow($property) {
+  -webkit-box-shadow: $property;
+  -moz-box-shadow: $property;
+  box-shadow: $property;
+}
+
+// DISPLAY INLINE-BLOCK (USAGE: @include displayInlineBlock;)
+@mixin displayInlineBlock {
+  display: inline-block;
+  vertical-align: top;
+}
+
+// DISPLAY INLINE-BLOCK HIDDEN (USAGE: @include displayInlineBlockHidden;)
+@mixin displayInlineBlockHidden {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+}
+
+// DISPLAY FLEX-CENTER (USAGE: @include displayFlexCenter;)
+@mixin displayFlexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// DISPLAY INLINE-FLEX-BETWEEN (USAGE: @include displayFlexBetween;)
+@mixin displayFlexBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// DISPLAY INLINE-FLEX-AROUND (USAGE: @include displayFlexAround;)
+@mixin displayFlexAround {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+// DISPLAY INLINE-FLEX-AROUND (USAGE: @include displayFlexColumn;)
+@mixin displayFlexColumn {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+// DISPLAY INLINE-FLEX-CENTER (USAGE: @include displayInlineFlexCenter;)
+@mixin displayInlineFlexCenter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// TEXT ELLIPSIS (USAGE: @include ellipsis(100px);)
+@mixin ellipsis($max-width) {
+  display: inline-block;
+  max-width: $max-width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// CLEARFIX (USAGE: @extend %clearfix;)
+%clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// VISUALLY HIDE (USAGE: @extend %visuallyhidden;)
+%visuallyHidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+// LINE AROUND TEXT (USAGE: @extend %lineAroundText;)
+%lineAroundText {
+  &:before,
+  &:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+    width: 20%;
+    background-color: #fff;
+  }
+  &:before {
+    right: 0.5rem;
+    margin-left: -50%;
+  }
+  &:after {
+    left: 0.5rem;
+    margin-right: -50%;
+  }
+}
+
+// OPACITY
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// USER-SELECT (USAGE: @include userSelect(none);)
+@mixin userSelect($property) {
+  -webkit-user-select: $property;
+  -moz-user-select: $property;
+  -ms-user-select: $property;
+  user-select: $property;
+}
+
+// CALCULATE FONT SIZE (REM)
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+// ANIMATIONS AND KEYFRAMES
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+// PLACEHOLDER (USAGE: @include placeholder { color: rgba(255, 255, 255, 0.2);})
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+// DISPLAY INLINE-FLEX-BETWEEN (USAGE: @include displayFlexAlignRight;)
+@mixin displayFlexAlignCenter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+// GRADIENT BACKGROUND
+@mixin gradientBackground {
+  background: #1a4e9c; /* Old browsers */
+  // background: -moz-linear-gradient(
+  //   left,
+  //   #1a4e9c 0%,
+  //   #2ab6d0 94%,
+  //   #2ab6d0 100%
+  // ); /* FF3.6-15 */
+  // background: -webkit-linear-gradient(
+  //   left,
+  //   #1a4e9c 0%,
+  //   #2ab6d0 94%,
+  //   #2ab6d0 100%
+  // ); /* Chrome10-25,Safari5.1-6 */
+  // background: linear-gradient(
+  //   to right,
+  //   #1a4e9c 0%,
+  //   #2ab6d0 94%,
+  //   #2ab6d0 100%
+  // ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a4e9c', endColorstr='#2ab6d0',GradientType=1 ); /* IE6-9 */
+}
+
+@mixin  fontPrompt{
+  font-family: "prompt", 'sans serif';
+}

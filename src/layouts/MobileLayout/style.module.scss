@@ -1,0 +1,25 @@
+@import "../../assets/styles/globals.scss";
+
+.mobile-layout-container {
+  width: $full-width;
+  height: $full-height;
+  min-height: 100vh;
+
+  .mobile-layout-header {
+    @include displayFlexBetween;
+    height: $layoutHeader-height;
+    padding: $layoutHeader-padding;
+    background-color: $color-primary;
+
+    .mobile-layout-header_logo {
+      height: $layoutHeaderLogo-height;
+    }
+  }
+
+  .mobile-layout-content {
+    overflow-y: auto;
+    height: $layoutContent-height;
+    padding: $layoutContent-padding;
+    background-color: $white2-color;
+  }
+}

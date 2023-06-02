@@ -1,0 +1,33 @@
+@import "../../assets/styles/globals.scss";
+
+
+.layout-container {
+  width: $full-width;
+  height: $full-height;
+  min-height: 100vh;
+
+  .layout-header-top {
+      @include displayFlexBetween;
+      height: $layoutTopHeader-height;
+      padding: $layoutHeader-padding;
+      background-color: $color-secondary;
+    }
+
+  .layout-header {
+    @include displayFlexBetween;
+    height: $layoutHeader-height;
+    padding: $layoutHeader-padding;
+    background-color: $color-primary;
+
+    .layout-header_logo {
+      height: $layoutHeaderLogo-height;
+    }
+  }
+
+  .layout-content {
+    overflow-y: auto;
+    height: $layoutContent-height;
+    padding: $layoutContent-padding;
+    background-color: $white2-color;
+  }
+}
